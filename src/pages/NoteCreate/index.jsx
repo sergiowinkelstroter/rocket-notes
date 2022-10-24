@@ -1,6 +1,7 @@
 import * as C from "./styles";
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
+import { Link } from "react-router-dom";
 
 export const NoteCreate = () => {
   return (
@@ -8,8 +9,10 @@ export const NoteCreate = () => {
       <Header />
       <C.Content>
         <C.Header>
-          <C.Title>Criar Conta</C.Title>
-          <C.ButtonBack>Voltar</C.ButtonBack>
+          <C.Title>Criar Nota</C.Title>
+          <Link to="/home">
+            <C.ButtonBack>Voltar</C.ButtonBack>
+          </Link>
         </C.Header>
         <C.Form>
           <C.Input placeholder="Título" />
