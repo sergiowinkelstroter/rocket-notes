@@ -19,9 +19,8 @@ export const Perfil = () => {
     setPasswordLocal(localStorage.getItem("password"));
   }, []);
 
-  const navigate = useNavigate();
-
-  function handleEditPerfil() {
+  function handleEditPerfil(event) {
+    event.preventDefault();
     if (password === passwordLocal) {
       localStorage.setItem("name", name);
       localStorage.setItem("email", email);
@@ -29,6 +28,8 @@ export const Perfil = () => {
     } else {
       alert("Senha atual errada");
     }
+    setNewPassword("");
+    setPassword("");
   }
 
   return (
