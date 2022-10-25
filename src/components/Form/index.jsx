@@ -1,11 +1,13 @@
 import { Button } from "../Button";
 import { BiEnvelope, BiLockAlt, BiUser } from "react-icons/bi";
+import { FiGithub } from "react-icons/fi";
 import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export const Form = ({ subtitle, footer, titleButton }) => {
   const [name, setName] = useState("");
+  const [github, setGithub] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -16,6 +18,7 @@ export const Form = ({ subtitle, footer, titleButton }) => {
       localStorage.setItem("name", name);
       localStorage.setItem("email", email);
       localStorage.setItem("password", password);
+      localStorage.setItem("github", github);
       navigate("/home");
     } else if (titleButton === "Entrar") {
       if (
@@ -38,15 +41,26 @@ export const Form = ({ subtitle, footer, titleButton }) => {
       <C.Form onSubmit={(e) => handleSign(e)}>
         <C.SubTitle>{subtitle}</C.SubTitle>
         {titleButton === "Cadastrar" && (
-          <C.Input>
-            <BiUser size={24} />
-            <input
-              type="text"
-              placeholder="Nome"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </C.Input>
+          <>
+            <C.Input>
+              <BiUser size={24} />
+              <input
+                type="text"
+                placeholder="Nome"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </C.Input>
+            <C.Input>
+              <FiGithub size={24} />
+              <input
+                type="text"
+                placeholder="Github username"
+                value={github}
+                onChange={(e) => setGithub(e.target.value)}
+              />
+            </C.Input>
+          </>
         )}
         <C.Input>
           <BiEnvelope size={24} />

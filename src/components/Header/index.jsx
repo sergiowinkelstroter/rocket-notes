@@ -6,19 +6,18 @@ import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [name, setName] = useState();
+  const [image, setImage] = useState();
 
   useEffect(() => {
     setName(localStorage.getItem("name"));
+    setImage(localStorage.getItem("github"));
   }, []);
 
   return (
     <C.Container>
       <Link to="/perfil">
         <C.Profile>
-          <img
-            src="https://github.com/sergiowinkelstroter.png"
-            alt="Foto do usuario"
-          />
+          <img src={`https://github.com/${image}.png`} alt="Foto do usuario" />
           <div>
             <span>Bem-vindo</span>
             <strong>{name}</strong>
