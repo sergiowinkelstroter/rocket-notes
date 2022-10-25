@@ -72,6 +72,7 @@ export const Content = styled.main`
   position: absolute;
   left: 20%;
   top: 20%;
+
   > input {
     width: 100%;
     border: none;
@@ -85,6 +86,7 @@ export const Content = styled.main`
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
+
   > h4 {
     font-style: normal;
     font-weight: 400;

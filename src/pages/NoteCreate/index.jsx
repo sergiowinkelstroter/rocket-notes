@@ -2,6 +2,7 @@ import * as C from "./styles";
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
+import { NoteItem } from "../../components/NoteItem";
 
 export const NoteCreate = () => {
   return (
@@ -20,9 +21,15 @@ export const NoteCreate = () => {
         </C.Form>
         <C.Section>
           <h4>Links úteis</h4>
+          <NoteItem value="https://rocketseat.com.br" />
+          <NoteItem isNew placeholder="Novo link" />
         </C.Section>
         <C.Section>
           <h4>Marcadores</h4>
+          <div className="tags">
+            <NoteItem value="React" />
+            <NoteItem isNew placeholder="Nova tag" />
+          </div>
         </C.Section>
         <Button title="Salvar" />
       </C.Content>

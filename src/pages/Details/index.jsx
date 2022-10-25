@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
+import { Tag } from "../../components/Tag";
 import * as C from "./styles";
 
 export const Details = () => {
@@ -33,11 +35,13 @@ export const Details = () => {
         <C.Marcadores>
           <h4>Marcadores</h4>
           <div>
-            <Button title="express" />
-            <Button title="nodejs" />
+            <Tag title="express" />
+            <Tag title="react" />
           </div>
         </C.Marcadores>
-        <Button title="Voltar" />
+        <Link to="/home">
+          <Button title="Voltar" />
+        </Link>
       </C.Content>
     </C.Container>
   );

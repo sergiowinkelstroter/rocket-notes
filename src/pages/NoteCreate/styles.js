@@ -87,4 +87,10 @@ export const Section = styled.div`
     border-bottom-style: solid;
     border-bottom-color: ${theme.COLORS.BACKGROUND_700};
   }
+
+  .tags {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 `;

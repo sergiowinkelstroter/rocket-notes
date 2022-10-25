@@ -2,6 +2,7 @@ import * as C from "./styles";
 import { Header } from "../../components/Header";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
+import { Note } from "../../components/Note";
 
 export const Home = () => {
   return (
@@ -29,6 +30,15 @@ export const Home = () => {
         <input type="text" placeholder="Pesquisar pelo título" />
         <C.Section>
           <h4>Minhas notas</h4>
+          <Note
+            data={{
+              title: "React",
+              tags: [
+                { id: "1", name: "react" },
+                { id: "2", name: "node" },
+              ],
+            }}
+          />
         </C.Section>
       </C.Content>
     </C.Container>

@@ -16,7 +16,7 @@ export const Content = styled.main`
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 70px;
   padding-bottom: 50px;
 
   > h1 {
